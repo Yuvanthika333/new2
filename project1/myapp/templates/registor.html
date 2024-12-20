@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            background-image: url('../static/images/download.jpg');
+            background-size: cover;
+        }
+        
+        header {
+            background-color: #2a4c5e;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        
+        nav {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: white;
+            background-color:#2a4c5e;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+        
+        nav a:hover {
+            background-color:#2a4c5e;
+        }
+        
+        .container {
+            max-width: 500px;
+            margin: 20px auto ;
+            padding: 0 20px;
+        }
+        
+        .content {
+            background-color:rgba(235, 209, 152, 0.531);
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 50px;
+        }
+        
+        footer {
+            background-color:#2a4c5e;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+
+
+        input[type="text"],
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            margin-left: 15px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Admin Login-Student Management System</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/aboutus">About Us</a>
+        <a href="/contactus">Contact Us</a>
+        <a href="/adminlogin">Admin Login</a>
+        <a href="/studentlogin">Student Login</a>
+       
+    </nav>
+    <div class="container" style="margin: left 500px; ;">
+        <div class="content">
+            <h2 style="text-align: center;">Registration</h2>
+            <section class="main-content" style="text-align: center;">
+                <form  method="POST">
+                {% csrf_token %}
+
+                    
+                    <input type="text"  name="username" placeholder="Username"><br><br>
+                    
+                    <input type="text" name="password" placeholder="Password" required><br><br>
+                   
+                    <input type="password" name="cpass" placeholder="Confrimpass" required><br><br>
+                    <input type="submit" value="Login">
+                </form>
+            </section>
+        
+            
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Student Management System</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+}
+
+section {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+}
+
+section h2 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Your Dashboard</h1>
+       
+    </header>
+
+    <main>
+        <section class="profile">
+            <h2>Your Profile</h2>
+            <p>Name: John Doe</p>
+            <p>Email: john.doe@example.com</p>
+        </section>
+
+        <section class="courses">
+            <h2>Your Courses</h2>
+            <ul>
+                <li>Course 1</li>
+                <li>Course 2</li>
+                <li>Course 3</li>
+                <li>Course 4</li>
+            </ul>
+        </section>
+
+        <section class="grades">
+            <h2>Your Grades</h2>
+            <table>
+                <tr>
+                    <th>Course</th>
+                    <th>Grade</th>
+                </tr>
+                <tr>
+                    <td>Course 1</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>Course 2</td>
+                    <td>B</td>
+                </tr>
+                <tr>
+                    <td>Course 3</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>Course 4</td>
+                    <td>B</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Student Dashboard. All rights reserved.</p>
+    </footer>
+</body>
+</html>

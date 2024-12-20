@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757;
+}
+
+.content {
+    margin-left: 200px;
+    padding: 20px;
+    width: calc(100% - 200px);
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Optional: Adjust spacing between boxes */
+    padding: 20px; /* Optional: Add some padding around the container */
+}
+
+.box {
+    flex: 1; /* Make each box take up equal space */
+    margin: 0 10px; /* Optional: Add margin between boxes */
+    padding: 20px; /* Add padding inside the boxes */
+    background-color: #f0f0f0;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.box1 {
+    background-color: #ff9999; /* Optional: Different background colors */
+}
+
+.box2 {
+    background-color: #99ff99;
+}
+
+.box3 {
+    background-color: #9999ff;
+}
+
+
+
+
+.container1 {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+td {
+    background-color: #fff;
+}
+
+tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}
+
+.action-btn {
+    border: none;
+    padding: 8px 12px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.edit-btn {
+    background-color: #4CAF50; /* Green */
+}
+
+.delete-btn {
+    background-color: #f44336; /* Red */
+}
+
+.edit-btn:hover {
+    background-color: #45a049;
+}
+
+.delete-btn:hover {
+    background-color: #e53935;
+}
+.container2 {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    margin-top: 0;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <ul> 
+                <li><a href="#" class="menu-item" data-target="dashboard">Dashboard</a></li>
+                <li><a href="#" class="menu-item" data-target="student-reports">Student Reports</a></li>
+                <li><a href="#" class="menu-item" data-target="search-reports">Sarch Reports</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div id="dashboard" class="content-section">
+                <h1>Dashboard</h1>
+                <p>Welcome to the Dashboard section.</p>
+                <div class="container">
+                    <div class="box box1">
+                        <h2>Project Overview</h2>
+                        <p>This section provides an overview of the project, including objectives, scope, and expected outcomes.</p>
+                        <ul>
+                            <li>Objective: Improve user experience</li>
+                            <li>Scope: Web development and design</li>
+                            <li>Expected Outcome: Responsive and user-friendly web application</li>
+                        </ul>
+                    </div>
+                    <div class="box box2">
+                        <h2>Team Members</h2>
+                        <p>Meet the team working on this project:</p>
+                        <ul>
+                           <li><strong>Vignesh S.</strong> - Lead Developer</li>
+                           <li><strong>Jane Doe</strong> - UI/UX Designer</li>
+                           <li><strong>John Smith</strong> - Backend Developer</li>
+                        </ul>
+                    </div>
+                    <div class="box box3">Box 3</div>
+                </div>
+            </div>
+            <div id="student-reports" class="content-section">
+                <h1>Student Reports</h1>
+                <p>Welcome to the Student Reports section.</p>
+                <div class="container1">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Father's Name</th>
+                                <th>Email</th>
+                                <th>Course</th>
+                                <th>Grade Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for stud in stud %}
+                            <tr>
+                                <td>{{stud.id}}</td>
+                                <td>{{stud.stud_name}}</td>
+                                <td>{{stud.father_name}}</td>
+                                <td>{{stud.email}}</td>
+                            
+                               
+                                <td>{{stud.student_c}}</td>
+                                <td>{{stud.course}}</td>
+                                <td>
+                                    <a href="/edit/{{stud.id}}"><button class="action-btn edit-btn">Edit</button></a>
+                                    <a href="/delete/{{stud.id}}"><button class="action-btn delete-btn">Delete</button></a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                           
+                        </tbody>
+                    </table>
+                </div>    
+               
+            </div>
+            <div id="search-reports" class="content-section">
+                <h1>Search Record</h1>
+                <p>Welcome to the Search section.</p>
+                <div class="container2">
+                    <form action="/search/{{stud.id}}" method="get">
+                        {% csrf_token %}
+                        <label for="search-query">Search:</label>
+                        <input type="number" id="id" value="{{stud.id}}"name="query" placeholder="Enter your search term..." required>
+                        <button type="submit">Search</button>
+                    </form>
+                </div>    
+            </div>
+            <div id="student-reports" class="content-section">
+            </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const menuItems = document.querySelectorAll('.menu-item');
+    const sections = document.querySelectorAll('.content-section');
+
+    // Function to show a section
+    function showSection(sectionId) {
+        sections.forEach(section => section.classList.remove('active'));
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+        }
+    }
+
+    // Add click event listeners to menu items
+    menuItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('data-target');
+            showSection(targetId);
+        });
+    });
+
+    // Set default active section (Dashboard)
+    showSection('dashboard');
+});
+
+    </script>
+</body>
+</html>

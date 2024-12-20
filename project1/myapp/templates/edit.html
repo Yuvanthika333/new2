@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    height: 100vh;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+
+.column-3{
+   
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.content{
+    margin: 30px;
+}
+.container { 
+    grid-column: span 3;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.column-3 {
+    grid-column: span 3;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.column-9 {
+    grid-column: span 9;
+    background-color: #e0e0e0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+.h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color:  #2e61ef;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #7490f5;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <form action="editrecord/{{stud.id}}" method="post">
+                {%csrf_token%}
+                    <div class="form-group">
+                        <label for="stud-name">Student Name:</label>
+                        <input type="text" id="stud-name" value="{{stud.stud_name}}" name="stud_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="father-name">Father's Name:</label>
+                        <input type="text" id="father-name" value="{{stud.father_name}}"name="father_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email"  value="{{stud.email}}" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-c">Student Course:</label>
+                        <input type="text" id="student-c"value="{{stud.student_c}}" name="student_c" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="course">Course Grade:</label>
+                        <input type="text" id="course"value="{{stud.course}}" name="course" required>
+                    </div>
+                    <button type="submit">Update</button>
+            </form>
+            </div>
+    </div>
+    
+</body>
+</html>
